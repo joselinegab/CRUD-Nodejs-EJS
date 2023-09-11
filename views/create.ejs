@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>CRUD Nodejs/EJS</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Usuarios</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-12 mb-lg-0">
+             
+            </ul>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <form action="/search" method="GET" class="d-flex form-inline" id="search-form" role="search">
+                        <input  id="texto" oninput="submitForm()" name="texto" class="form-control mr-sm-2" type="search" placeholder="Buscar.." aria-label="Search">
+                    </form>
+                </li>
+            </ul>
+        </div>
+        </div>
+      </nav>
+    <hr>
+    <!--FORMULARIO DE INGRESO DE DATOS-->
+    <div class="container mt-4" style="width: 50%;">
+        <div class="card border-secondary">
+            <div class="card-header"> Nuevo registro </div>
+            <div class="card-body">
+                <form action="/save" method="POST">
+                    <div class="mb-3">
+                        <label for="users" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="usuario" name="usuario" tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="users" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="pass" name="pass">
+                    </div>
+                    <div class="mb-3">
+                        <label for="users" class="form-label">Rol</label>
+                        <select name="rol" id="rol" class="form-select">
+                            <option value="admin" selected>Administrador</option>
+                            <option value="user">Usuario</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <a href="/" class="btn btn-secondary">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+
+</html>
